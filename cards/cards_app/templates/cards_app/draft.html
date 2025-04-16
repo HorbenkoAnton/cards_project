@@ -1,0 +1,21 @@
+<!-- cards_app/templates/cards_app/draft.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draft Card</title>
+</head>
+<body>
+    <p>{{ random_card.eng_word }}</p>  <!-- Access random card's English word -->
+
+    <details>
+        <summary>Show Translation</summary>
+        <p>{{ random_card.ukr_word }}</p>  <!-- Access random card's Ukrainian translation -->
+    </details>
+
+    <div>
+        <button>True</button>
+        <button>False</button>
+    </div>
+</body>
+</html>

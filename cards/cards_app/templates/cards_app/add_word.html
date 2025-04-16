@@ -1,0 +1,22 @@
+<!-- cards_app/add_word.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Word</title>
+</head>
+<body>
+    <h1>Add a New Word</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="eng_word">English Word:</label><br>
+        <input type="text" id="eng_word" name="eng_word" required><br><br>
+        
+        <label for="ukr_word">Ukrainian Word:</label><br>
+        <input type="text" id="ukr_word" name="ukr_word" required><br><br>
+        
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- cards_app/words.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words List</title>
+</head>
+<body>
+    <h1>Words List</h1>
+    <ul>
+        {% for word in words %}
+            <li>
+                <strong>English Word:</strong> {{ word.eng_word }} <br>
+                <strong>Ukrainian Word:</strong> {{ word.ukr_word }} <br>
+                <hr>
+            </li>
+        {% empty %}
+            <p>No words available.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
