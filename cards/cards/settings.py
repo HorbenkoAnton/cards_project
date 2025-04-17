@@ -115,7 +115,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+# If you're in development, make sure this is set up for static files to be served correctly
+STATICFILES_DIRS = [
+    BASE_DIR / 'cards_app/static',
+]
+
+# This might be important if you're in production
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

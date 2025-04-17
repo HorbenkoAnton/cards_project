@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit Word</h1>
-    <form method="POST">
+    <form method="POST" action = "{% url 'editWord' card.id %}">
         {% csrf_token %}
         <label for="eng_word">English Word:</label><br>
         <input type="text" id="eng_word" name="eng_word" value="{{ card.eng_word }}" required><br><br>
@@ -18,5 +18,6 @@
         
         <button type="submit">Edit</button>
     </form>
+    <a href = "{% url 'index' %}"><button>Cancel</button></a>
 </body>
 </html>

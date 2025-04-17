@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cards</title>
-</head>
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <title>Cards</title>
+        <link rel="stylesheet" href="{% static 'cards_app/word.css' %}">
+    </head>
 <body>
+    <div class="top-bar">
+        <a href="{% url 'words' %}" class="top-link left">Words</a>
+        <a href="{% url 'add' %}" class="top-link right">Add</a>
+    </div>
 
-
-    <form action="{pass}" method="get">
-        <button type="submit">Draft</button>
-    </form>
-
-    <a href="{pass}">Words</a><br>
-    <a href="{pass}">Add</a>
-
+    <div class="center">
+        <a href="{% url 'draft' %}">
+            <button class="draft-btn">Draft</button>
+        </a>
+    </div>
 </body>
 </html>

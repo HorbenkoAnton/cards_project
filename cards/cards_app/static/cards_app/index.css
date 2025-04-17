@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #EEEEEE;
+}
+
+a {
+    text-decoration: none;
+    color: #00ADB5;
+}
+
+.top-bar {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw;
+    box-sizing: border-box;
+    z-index: 10; /* Ensure it's on top */
+}
+
+.top-link {
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.top-link:hover {
+    color: #FFFFFF;
+}
+
+.top-link.right {
+    text-align: right;
+}
+
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.draft-btn {
+    background-color: #1E1E1E;
+    color: #EEEEEE;
+    border: 2px solid #00ADB5;
+    padding: 15px 10vw;
+    font-size: 5vw;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.draft-btn:hover {
+    background-color: #00ADB5;
+    color: #121212;
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0 3vw;
+    }
+
+    .top-link {
+        font-size: 16px;
+    }
+
+    .draft-btn {
+        padding: 12px 8vw;
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 0 2vw;
+    }
+
+    .top-link {
+        font-size: 14px;
+    }
+
+    .draft-btn {
+        padding: 10px 5vw;
+        font-size: 7vw;
+    }
+}

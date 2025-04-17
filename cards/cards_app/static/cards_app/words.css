@@ -1,0 +1,146 @@
+/* cards_app/index.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #EEEEEE;
+}
+
+a {
+    text-decoration: none;
+    color: #00ADB5;
+}
+
+.top-bar {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+
+.top-link {
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.top-link:hover {
+    color: #FFFFFF;
+}
+
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.words-container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #EEEEEE;
+}
+
+ul.word-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.word-item {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.word-item:hover {
+    background-color: #333333;
+}
+
+.word-content {
+    margin-bottom: 10px;
+}
+
+.word-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn {
+    background-color: #00ADB5;
+    color: #121212;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #00A29B;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #FF5757;
+}
+
+.delete-btn:hover {
+    background-color: #D23D3D;
+}
+
+hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #444444;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0 3vw;
+    }
+
+    .top-link {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .word-item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 0 2vw;
+    }
+
+    .top-link {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .word-item {
+        padding: 12px;
+    }
+}

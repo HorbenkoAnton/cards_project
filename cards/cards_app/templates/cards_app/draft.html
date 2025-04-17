@@ -6,16 +6,20 @@
     <title>Draft Card</title>
 </head>
 <body>
-    <p>{{ random_card.eng_word }}</p>  <!-- Access random card's English word -->
+    <p>{{ random_card.eng_word }}</p>
 
     <details>
         <summary>Show Translation</summary>
-        <p>{{ random_card.ukr_word }}</p>  <!-- Access random card's Ukrainian translation -->
+        <p>{{ random_card.ukr_word }}</p>
     </details>
 
     <div>
-        <button>True</button>
-        <button>False</button>
+        <a href="{% url 'revision' random_card.id 'true' %}">
+            <button>True</button>
+        </a>
+        <a href="{% url 'revision' random_card.id 'false' %}">
+            <button>False</button>
+        </a>
     </div>
 </body>
 </html>
