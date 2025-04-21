@@ -129,7 +129,3 @@ body {
     color: #fff;
 }
 
-/* Container for the delete link */
-.delete-link-container {
-    margin-top: 60px; /* Adjust the position for delete link */
-}

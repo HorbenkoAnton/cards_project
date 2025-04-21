@@ -1,4 +1,3 @@
-<!-- cards_app/templates/cards_app/draft.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
 </head>
 <body>
     <div class="top-bar">
-        <a href="{% url 'index' %}" class="top-link left">Home</a>
+        <a href="{% url 'index_page' %}" class="top-link left">Home</a>
     </div>
 
     <div class="center">
@@ -23,10 +22,10 @@
             </details>
 
             <div class="button-row">
-                <a href="{% url 'revision' random_card.id 'true' %}">
+                <a href="{% url 'drafted_revision' random_card.id 'true' %}">
                     <button class="btn true">✅</button>
                 </a>
-                <a href="{% url 'revision' random_card.id 'false' %}">
+                <a href="{% url 'drafted_revision' random_card.id 'false' %}">
                     <button class="btn false">❌</button>
                 </a>
             </div>

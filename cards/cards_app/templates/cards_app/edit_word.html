@@ -1,4 +1,3 @@
-<!-- cards_app/templates/cards_app/edit_word.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@
     <div class="center">
         <div class="card-box">
             <h2 class="form-title">Edit Word</h2>
-            <form method="POST" action="{% url 'editWord' card.id %}">
+            <form method="POST" action="{% url 'edit_word' card.id %}">
                 {% csrf_token %}
                 
                 <input type="text" id="eng_word" name="eng_word" value="{{ card.eng_word }}" required class="input-field">
@@ -22,7 +21,7 @@
 
                 <div class="button-row">
                     <button type="submit" class="btn true">Save</button>
-                    <a href="{% url 'words' %}">
+                    <a href="{% url 'words_page' %}">
                         <button type="button" class="btn false">Cancel</button>
                     </a>
                 </div>
