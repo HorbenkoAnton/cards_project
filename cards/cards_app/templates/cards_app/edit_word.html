@@ -1,23 +1,33 @@
-<!-- cards_app/edit_word.html -->
+<!-- cards_app/templates/cards_app/edit_word.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Word</title>
+    <link rel="stylesheet" href="{% static 'cards_app/index.css' %}">
+    <link rel="stylesheet" href="{% static 'cards_app/add_word.css' %}">
 </head>
 <body>
-    <h1>Edit Word</h1>
-    <form method="POST" action = "{% url 'editWord' card.id %}">
-        {% csrf_token %}
-        <label for="eng_word">English Word:</label><br>
-        <input type="text" id="eng_word" name="eng_word" value="{{ card.eng_word }}" required><br><br>
-        
-        <label for="ukr_word">Ukrainian Word:</label><br>
-        <input type="text" id="ukr_word" name="ukr_word" value="{{ card.ukr_word }}" required><br><br>
-        
-        <button type="submit">Edit</button>
-    </form>
-    <a href = "{% url 'index' %}"><button>Cancel</button></a>
+
+    <div class="center">
+        <div class="card-box">
+            <h2 class="form-title">Edit Word</h2>
+            <form method="POST" action="{% url 'editWord' card.id %}">
+                {% csrf_token %}
+                
+                <input type="text" id="eng_word" name="eng_word" value="{{ card.eng_word }}" required class="input-field">
+                <input type="text" id="ukr_word" name="ukr_word" value="{{ card.ukr_word }}" required class="input-field">
+
+                <div class="button-row">
+                    <button type="submit" class="btn true">Save</button>
+                    <a href="{% url 'words' %}">
+                        <button type="button" class="btn false">Cancel</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,57 @@
+.card-box {
+    background-color: #1E1E1E;
+    border: 2px solid #00ADB5;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.eng-word {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.translation-box {
+    margin-bottom: 30px;
+}
+
+.translation-box summary {
+    cursor: pointer;
+    font-size: 18px;
+    color: #00ADB5;
+}
+
+.translation-box p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    color: #EEEEEE;
+    border: none;
+    padding: 15px 20px;
+    font-size: 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn.true {
+    background-color: #00AD7F;
+}
+
+.btn.false {
+    background-color: #AD0034;
+}

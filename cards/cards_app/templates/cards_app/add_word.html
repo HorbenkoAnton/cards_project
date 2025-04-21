@@ -1,23 +1,33 @@
-<!-- cards_app/add_word.html -->
+<!-- cards_app/templates/cards_app/add_word.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Word</title>
+    <link rel="stylesheet" href="{% static 'cards_app/index.css' %}">
+    <link rel="stylesheet" href="{% static 'cards_app/add_word.css' %}">
 </head>
 <body>
-    <h1>Add a New Word</h1>
-    <form method="POST" action ="{% url 'addWord' %}">
-        {% csrf_token %}
-        <label for="eng_word">English Word:</label><br>
-        <input type="text" id="eng_word" name="eng_word" required><br><br>
-        
-        <label for="ukr_word">Ukrainian Word:</label><br>
-        <input type="text" id="ukr_word" name="ukr_word" required><br><br>
-        
-        <button type="submit">Add</button>
-    </form>
-    <a href = "{% url 'index' %}"><button>Cancel</button></a>
+
+    <div class="center">
+        <div class="card-box">
+            <h2 class="form-title">Add a New Word</h2>
+            <form method="POST" action="{% url 'addWord' %}">
+                {% csrf_token %}
+                
+                <input type="text" id="eng_word" name="eng_word" placeholder="English word" required class="input-field">
+                <input type="text" id="ukr_word" name="ukr_word" placeholder="Ukrainian word" required class="input-field">
+
+                <div class="button-row">
+                    <button type="submit" class="btn true">Add</button>
+                    <a href="{% url 'index' %}">
+                        <button type="button" class="btn false">Cancel</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

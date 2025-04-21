@@ -75,6 +75,6 @@ def editWord(request,id):
 
 def deleteWord(request,id):
     if request.method == "POST":
-        card = get_object_or_404(Card,pk=id).delete()
+        get_object_or_404(Card,pk=id).delete()
         return HttpResponseRedirect("/words")
     return HttpResponseRedirect("/")

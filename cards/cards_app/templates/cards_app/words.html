@@ -1,4 +1,3 @@
-<!-- cards_app/words.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,41 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Words List</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'cards_app/index.css' %}">
+    <link rel="stylesheet" href="{% static 'cards_app/wordsPage.css' %}">
 </head>
 <body>
-    <!-- Top bar with Home button -->
     <div class="top-bar">
-        <a href="{% url 'index' %}" class="top-link left">Home</a>
+        <a href="{% url 'index' %}" class="top-link">Home</a>
     </div>
 
-    <div class="center">
+    <div class="page-content">
         <div class="words-container">
             <h1>Words List</h1>
             <ul class="word-list">
                 {% for word in words %}
-                    <li class="word-item">
+                <li class="word-item">
+                    <div class="word-card">
                         <div class="word-content">
-                            <strong>English Word:</strong> {{ word.eng_word }} <br>
-                            <strong>Ukrainian Word:</strong> {{ word.ukr_word }} <br>
-                            <strong>Revised:</strong>
-                            {% if not word.is_draftable %}
-                                ✅
-                            {% else %}
-                                ❌
-                            {% endif %}
+                            <p><strong>English Word:</strong> {{ word.eng_word }}</p>
+                            <p><strong>Ukrainian Word:</strong> {{ word.ukr_word }}</p>
+                            <p><strong>Revised:</strong>
+                                {% if not word.is_draftable %}
+                                    ✅
+                                {% else %}
+                                    ❌
+                                {% endif %}
+                            </p>
                         </div>
+                
                         <div class="word-actions">
-                            <a href="{% url 'edit' word.id %}">
-                                <button class="action-btn">Edit</button>
-                            </a>
-                            <form method="POST" action="{% url 'deleteWord' word.id %}">
-                                {% csrf_token %}
-                                <button type="submit" class="action-btn delete-btn">Delete</button>
-                            </form>
+                            <div class="edit-link">
+                                <a href="{% url 'edit' word.id %}" class="action-link">✏️</a>
+                            </div>
+                            <div class="delete-link-container">
+                                <form method="POST" action="{% url 'deleteWord' word.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="action-link delete-link">🗑️</button>
+                                </form>
+                            </div>
                         </div>
-                        <hr>
-                    </li>
+                    </div>
+                </li>
                 {% empty %}
                     <p>No words available.</p>
                 {% endfor %}

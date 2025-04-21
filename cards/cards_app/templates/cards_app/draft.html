@@ -2,24 +2,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>Draft Card</title>
+    <title>Draft</title>
+    <link rel="stylesheet" href="{% static 'cards_app/index.css' %}">
+    <link rel="stylesheet" href="{% static 'cards_app/draft.css' %}">
 </head>
 <body>
-    <p>{{ random_card.eng_word }}</p>
+    <div class="top-bar">
+        <a href="{% url 'index' %}" class="top-link left">Home</a>
+    </div>
 
-    <details>
-        <summary>Show Translation</summary>
-        <p>{{ random_card.ukr_word }}</p>
-    </details>
+    <div class="center">
+        <div class="card-box">
+            <h2 class="eng-word">{{ random_card.eng_word }}</h2>
+            
+            <details class="translation-box">
+                <summary>Show Translation</summary>
+                <p>{{ random_card.ukr_word }}</p>
+            </details>
 
-    <div>
-        <a href="{% url 'revision' random_card.id 'true' %}">
-            <button>True</button>
-        </a>
-        <a href="{% url 'revision' random_card.id 'false' %}">
-            <button>False</button>
-        </a>
+            <div class="button-row">
+                <a href="{% url 'revision' random_card.id 'true' %}">
+                    <button class="btn true">✅</button>
+                </a>
+                <a href="{% url 'revision' random_card.id 'false' %}">
+                    <button class="btn false">❌</button>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
