@@ -15,11 +15,6 @@
     <div class="page-content">
         <div class="words-container">
             <h1>Words List
-                <!-- Button to trigger unrevise_all action -->
-                <form method="POST" action="{% url 'unrevise_all' %}" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="action-link unrevise-button">Unrevise All</button>
-                </form>
             </h1>
             <ul class="word-list">
                 {% for word in words %}
@@ -27,26 +22,12 @@
                     <div class="word-card">
                         <div class="word-content">
                             <p><strong>English Word:</strong> {{ word.eng_word }}</p>
-                            <p><strong>Ukrainian Word:</strong> {{ word.ukr_word }}</p>
-                            <p><strong>Revised:</strong>
-                                {% if not word.is_draftable %}
-                                    ✅
-                                {% else %}
-                                    ❌
-                                {% endif %}
-                            </p>
+                            <p><strong>Ukrainian Word:</strong> {{ word.ukr_word }}</p> 
                         </div>
                 
                         <div class="word-actions">
                             <div class="edit-link">
                                 <a href="{% url 'edit_word_page' word.id %}" class="action-link">✏️</a>
-                            </div>
-                
-                            <div class="unrevise-link-container">
-                                <form method="POST" action="{% url 'unrevise' word.id %}">
-                                    {% csrf_token %}
-                                    <button type="submit" class="action-link">♻️</button>
-                                </form>
                             </div>
                             <div class="delete-link-container">
                                 <form method="POST" action="{% url 'delete_word' word.id %}">

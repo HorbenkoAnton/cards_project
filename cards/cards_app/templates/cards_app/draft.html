@@ -22,10 +22,10 @@
             </details>
 
             <div class="button-row">
-                <a href="{% url 'drafted_revision' random_card.id 'true' %}">
+                <a href="{% url 'drafted_card_answer' random_card.id 'true' %}">
                     <button class="btn true">✅</button>
                 </a>
-                <a href="{% url 'drafted_revision' random_card.id 'false' %}">
+                <a href="{% url 'drafted_card_answer' random_card.id 'false' %}">
                     <button class="btn false">❌</button>
                 </a>
             </div>
